@@ -1,0 +1,14 @@
+services:
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - "./app:/var/www/html"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - "./app:/var/www/html"
+      - "./docker/nginx/conf.d:/etc/nginx/conf.d"
