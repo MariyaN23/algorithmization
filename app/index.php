@@ -2,6 +2,8 @@
 require './algorithms/sorting.php';
 require './algorithms/search.php';
 require './algorithms/stack.php';
+require './algorithms/deque.php';
+require './algorithms/linked-list.php';
 
 $unsortedArray = array(10, 7, 2, 1, 9, 6, 8, 5, 3, 4);
 
@@ -53,3 +55,22 @@ $str3 = "Лёша на полке клопа нашёл";
 echo "String: $str3" . " Reversed:" . reversedString($str3). "<br>";
 
 echo "<h1>Deque</h1>";
+$newDeque = new DoublyLinkedList();
+$newDeque->insert(1);
+$newDeque->insert(2);
+$newDeque->insert(3);
+$newDeque->insert(4);
+$newDeque->insert(5);
+
+$newDeque->display();
+
+echo "<h1>Linked list</h1>";
+$linkedList = new LinkedList();
+$linkedList->insert(1);
+$linkedList->insert(2);
+$linkedList->insert(3);
+echo "Linked List: ";
+$linkedList->printList();
+$linkedList->delete(2);
+echo "Linked list after deleting: ";
+$linkedList->printList();
